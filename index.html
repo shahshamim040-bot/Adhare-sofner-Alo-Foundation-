@@ -5,140 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ</title>
     <style>
-        :root { --primary: #1a2a6c; --secondary: #b21f1f; --accent: #fdbb2d; --light: #f4f7f6; --success: #27ae60; }
-        body { font-family: 'Arial', 'SolaimanLipi', sans-serif; margin: 0; padding: 0; background: var(--light); color: #333; scroll-behavior: smooth; text-align: center; }
+        :root { --primary: #1a2a6c; --secondary: #b21f1f; --accent: #fdbb2d; --light: #f4f7f6; --success: #27ae60; --fb-blue: #1877F2; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: var(--light); color: #333; }
         
-        /* Navigation */
-        .navbar { background: var(--primary); padding: 10px 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; background: white; object-fit: cover; }
-        .nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
-        .nav-links a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; padding: 8px 12px; border-radius: 5px; transition: 0.3s; }
-        .nav-links a:hover { background: var(--secondary); }
+        /* Header & Banner */
+        header { background: white; padding: 20px; text-align: center; border-bottom: 4px solid var(--primary); }
+        .logo-main { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 10px; }
+        .main-title { color: var(--secondary); margin: 5px 0; font-size: 28px; }
+        .motto { font-style: italic; color: #555; font-weight: bold; }
 
-        /* Leaderboard */
-        .header-section { background: white; padding: 40px 20px; }
-        .foundation-title { color: var(--secondary); font-size: clamp(22px, 5vw, 32px); margin-bottom: 30px; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 10px; }
-        .leader-img { width: 200px; height: 200px; border-radius: 50%; border: 6px solid var(--primary); object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .sub-leaders { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        .sub-card { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); width: 240px; }
-        .sub-img { width: 130px; height: 130px; border-radius: 50%; border: 4px solid var(--secondary); object-fit: cover; }
+        /* Navigation Bar */
+        .navbar { background: var(--primary); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        .navbar a { color: white; text-decoration: none; font-weight: bold; margin: 0 15px; padding: 5px 10px; border-radius: 5px; }
+        .navbar a:hover { background: var(--secondary); }
+
+        /* Main Layout */
+        .container { display: flex; flex-wrap: wrap; gap: 15px; padding: 20px; max-width: 1400px; margin: auto; }
+
+        /* Sidebars */
+        .sidebar { flex: 1; min-width: 280px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 15px; height: fit-content; position: sticky; top: 60px; }
+        .sidebar h3 { background: var(--primary); color: white; padding: 10px; border-radius: 5px; font-size: 18px; margin-top: 0; text-align: center; }
+        .member-list { list-style: none; padding: 0; font-size: 13px; line-height: 1.6; text-align: left; }
+        .member-list li { padding: 6px 0; border-bottom: 1px solid #eee; }
+        .member-list b { color: var(--secondary); }
+
+        /* Center Content */
+        .main-content { flex: 2; min-width: 350px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 20px; }
 
         /* Slider */
-        .slider-container { width: 95%; max-width: 1100px; height: 350px; margin: 20px auto; position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .slider { width: 100%; height: 350px; border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         .slide { display: none; width: 100%; height: 100%; }
         .slide.active { display: block; animation: fade 1s; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Content Display Area */
-        #data-display { padding: 30px 5%; background: #eef2f3; display: none; margin: 20px; border-radius: 15px; }
-        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; text-align: left; }
-        .member-card { background: white; padding: 15px; border-radius: 8px; border-left: 5px solid var(--secondary); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* Facebook Button */
+        .fb-link { display: inline-flex; align-items: center; background: var(--fb-blue); color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+        .fb-link:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(24,119,242,0.4); }
 
-        /* About & Gallery */
-        .section { padding: 40px 8%; background: white; text-align: justify; line-height: 1.8; }
-        .gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
-        .gallery-item { height: 140px; overflow: hidden; border-radius: 8px; cursor: pointer; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-        .gallery-item img:hover { transform: scale(1.1); }
+        /* Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 30px; }
+        .gallery img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+        .gallery img:hover { transform: scale(1.05); }
 
-        /* Donation & Footer */
-        .donate-box { background: var(--success); color: white; padding: 50px 20px; }
-        .donate-card { background: white; color: black; display: inline-block; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        footer { background: #111; color: white; padding: 40px 20px; }
-        .emergency-grid { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
-        .service-box img { width: 45px; filter: invert(1); }
-
-        /* Lightbox */
-        #lightbox { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        #lightbox img { max-width: 90%; max-height: 80%; border: 3px solid white; }
+        /* Footer */
+        footer { background: #111; color: white; padding: 30px; text-align: center; margin-top: 30px; }
 
         @keyframes fade { from {opacity: 0.4} to {opacity: 1} }
+        @media (max-width: 1024px) { .sidebar { flex: 100%; position: static; } .main-content { flex: 100%; } }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#" class="logo-area">
-            <img src="logo.png" alt="Logo" class="logo-img">
-            <span>আঁধারে স্বপ্নের আলো</span>
-        </a>
-        <div class="nav-links">
-            <a href="#about">সম্পর্কে</a>
-            <a href="javascript:void(0)" onclick="showProbashi()">প্রবাসী শাখা</a>
-            <a href="javascript:void(0)" onclick="showBloodGroups()">ব্লাড ডোনার</a>
-            <a href="#gallery">গ্যালারি</a>
-            <a href="#donate" style="background: var(--secondary);">দান করুন</a>
-        </div>
-    </nav>
-
-    <header class="header-section">
-        <h1 class="foundation-title">আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ</h1>
-        
-        <div class="leader-box">
-            <img src="chairman.jpg" alt="Chairman" class="leader-img">
-            <h2>মোঃ মীর হোসাইন (রাজু) পাটোয়ারী</h2>
-            <p><strong>প্রতিষ্ঠাতা সভাপতি</strong></p>
-        </div>
-
-        <div class="sub-leaders">
-            <div class="sub-card">
-                <img src="secretary.jpg" alt="Secretary" class="sub-img">
-                <h4>মোহাম্মদ রাশেদুল হাসান</h4>
-                <p>প্রতিষ্ঠাতা, সেক্রেটারি</p>
-            </div>
-        </div>
+    <header>
+        <img src="logo.png" alt="Foundation Logo" class="logo-main">
+        <h1 class="main-title">আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ</h1>
+        <p class="motto">“সুশীল সমাজ গড়ার অবিরাম প্রত্যয়”</p>
     </header>
 
-    <div class="slider-container">
-        <a href="https://www.facebook.com/profile.php?id=100078651475468" target="_blank">
-            <div class="slide active"><img src="slider1.jpg"></div>
-            <div class="slide"><img src="slider2.jpg"></div>
-        </a>
+    <div class="navbar">
+        <a href="#">হোম</a>
+        <a href="#about">আমাদের লক্ষ্য</a>
+        <a href="#gallery">গ্যালারি</a>
+        <a href="https://www.facebook.com/profile.php?id=100078651475468" target="_blank">ফেসবুক পেজ</a>
     </div>
 
-    <div id="data-display"></div>
-
-    <section class="section" id="about">
-        <h2 style="text-align: center; color: var(--secondary);">সংগঠন এর লক্ষ্য ও উদ্দেশ্য</h2>
-        <p>আমাদের প্রধান লক্ষ্য আল্লাহর সন্তুষ্টি অর্জন। শিক্ষা, স্বাস্থ্য, সামাজিক মূল্যবোধ এবং সুবিধাবঞ্চিত দরিদ্র এতিম শিশুদের সুনাগরিক হিসেবে গড়ে তোলা আমাদের মূল কাজ।</p>
+    <div class="container">
         
-        <h2 style="text-align: center; margin-top: 50px;" id="gallery">ফটো গ্যালারি</h2>
-        <div class="gallery-container">
-            <div class="gallery-item"><img src="photo1.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo2.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo3.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo4.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo5.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo6.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo7.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo8.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo9.jpg" onclick="openLightbox(this.src)"></div>
-            <div class="gallery-item"><img src="photo10.jpg" onclick="openLightbox(this.src)"></div>
-        </div>
-    </section>
+        <aside class="sidebar">
+            <h3>কমিটি ও শাখা</h3>
+            <div style="font-weight: bold; color: var(--primary); border-bottom: 2px solid #ddd; margin-bottom: 10px;">প্রবাসী শাখা (২০২৬-২৮)</div>
+            <ul class="member-list">
+                <li>১। <b>মনির হোসেন</b> - প্রধান উপদেষ্টা</li>
+                <li>২। <b>আরিফ হোসেন</b> - সিনিয়র উপদেষ্টা</li>
+                <li>৩। <b>সাইফুল ইসলাম</b> - উপদেষ্টা</li>
+                <li>৪। <b>শরিফুল ইসলাম</b> - উপদেষ্টা</li>
+                <li>৫। <b>জসিম বেপারী</b> - উপদেষ্টা</li>
+                <li>৬। <b>জামাল হোসেন</b> - উপদেষ্টা</li>
+                <li>১। <b>মোঃ ইমরান হোসেন</b> - সভাপতি</li>
+                <li>২। <b>শফিকুল ইসলাম</b> - সিনিয়র সহ-সভাপতি</li>
+                <li>৩। <b>মোঃ ফয়সাল বেপারী</b> - সহ-সভাপতি</li>
+                <li>৪। <b>জুয়েল হোসেন</b> - সহ-সভাপতি</li>
+                <li>৫। <b>সোহাগ হোসেন</b> - সাধারণ সম্পাদক</li>
+                <li>৬। <b>বাদশা ফাহাদ</b> - যুগ্ম সাধারণ সম্পাদক</li>
+                <li>৭। <b>মোঃ রেদওয়ান আহমেদ</b> - সহ-সাধারণ সম্পাদক</li>
+                <li>৮। <b>হাফেজ মোহাম্মদ রাসেল</b> - সাংগঠনিক সম্পাদক</li>
+                <li>৯। <b>আব্দুল কাইয়ুম</b> - সহ-সাংগঠনিক সম্পাদক</li>
+                <li>১০। <b>রবিউল হোসেন</b> - সহ-সাংগঠনিক সম্পাদক</li>
+                <li>১১। <b>রুবেল আহমেদ</b> - সহ-সাংগঠনিক সম্পাদক</li>
+                <li>১২। <b>মোহাম্মদ মাহির ফয়সাল</b> - শিক্ষা সম্পাদক</li>
+                <li>১৩। <b>শামীম হোসেন</b> - সহ-শিক্ষা সম্পাদক</li>
+                <li>১৪। <b>হাফেজ মোহাম্মদ নাহিদ</b> - ধর্মীয় সম্পাদক</li>
+                <li>১৫। <b>হৃদয় ব্যাপারি</b> - সাংস্কৃতিক সম্পাদক</li>
+                <li>১৭। <b>মোহাম্মদ আল আমিন</b> - দপ্তর সম্পাদক</li>
+                <li>১৯। <b>কামাল হোসেন সাগর</b> - অর্থ সম্পাদক</li>
+                <li>২৬। <b>মোহাম্মদ আহাদ</b> - প্রচার সম্পাদক</li>
+                <li>৩২। <b>মোহাম্মদ রাজিব</b> - যোগাযোগ সম্পাদক</li>
+            </ul>
+            <br>
+            <div style="font-weight: bold; color: var(--primary); border-bottom: 2px solid #ddd; margin-bottom: 10px;">বাংলাদেশ শাখা</div>
+            <ul class="member-list">
+                <li>১। <b>মোঃ মীর হোসাইন রাজু</b> - সভাপতি</li>
+                <li>২। <b>মোহাম্মদ রাশেদুল হাসান</b> - সাধারণ সম্পাদক</li>
+                <li><i>(অন্যান্য সদস্যদের তালিকা যুক্ত করুন)</i></li>
+            </ul>
+        </aside>
 
-    <section class="donate-box" id="donate">
-        <h2>মানবতার কল্যাণে এগিয়ে আসুন</h2>
-        <div class="donate-card">
-            <p><strong>বিকাশ/নগদ (পার্সোনাল):</strong> আপনার নাম্বার দিন</p>
-        </div>
-    </section>
+        <main class="main-content">
+            <a href="https://www.facebook.com/profile.php?id=100078651475468" target="_blank" class="fb-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" width="25" style="margin-right:10px;"> আমাদের ফেসবুক পেজ
+            </a>
+
+            <div class="slider">
+                <div class="slide active"><img src="slider1.jpg"></div>
+                <div class="slide"><img src="slider2.jpg"></div>
+            </div>
+
+            <div id="about" style="text-align: justify; line-height: 1.8;">
+                <h2 style="color: var(--primary); border-left: 5px solid var(--secondary); padding-left: 10px;">আমাদের সম্পর্কে</h2>
+                <p>“সুশীল সমাজ গড়ার অবিরাম প্রত্যয়”—এই মূলমন্ত্রকে ধারণ করে একদল দেশপ্রেমিক ও উদ্যমী যুবকের হাত ধরে ২০২১ সালের ২০ জুলাই যাত্রা শুরু করে <b>‘আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ’</b>। এটি সম্পূর্ণ একটি অরাজনৈতিক, অলাভজনক এবং স্বেচ্ছাসেবী সামাজিক সংগঠন। সমাজের অবহেলিত, সুবিধাবঞ্চিত এবং অন্ধকারের অতল গহ্বরে নিমজ্জিত মানুষের জীবনে আশার আলো জ্বালানোই এই সংগঠনের মূল লক্ষ্য।</p>
+                <p>আমরা বিশ্বাস করি, শিক্ষার আলো ও মানবিক সহায়তা একটি অন্ধকার সমাজকে আলোকিত করতে পারে। সেই লক্ষ্যেই আমাদের প্রতিটি সদস্য নিরলসভাবে কাজ করে যাচ্ছে।</p>
+            </div>
+
+            <h2 id="gallery" style="margin-top: 40px; color: var(--primary);">ফটো গ্যালারি</h2>
+            <div class="gallery">
+                <script>
+                    for(let i=1; i<=10; i++) {
+                        document.write(`<img src="photo${i}.jpg" alt="Gallery Image ${i}">`);
+                    }
+                </script>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>ব্লাড ডোনার শাখা</h3>
+            <p style="font-size: 12px; color: #666; text-align: center;">জরুরি প্রয়োজনে রক্ত দানে আমরা সদা প্রস্তুত।</p>
+            <ul class="member-list">
+                <li>🅰️ <b>A+ (পজিটিভ)</b> - ২০ জন</li>
+                <li>🅱️ <b>B+ (পজিটিভ)</b> - ১৫ জন</li>
+                <li>🅾️ <b>O+ (পজিটিভ)</b> - ২৫ জন</li>
+                <li>🆎 <b>AB+ (পজিটিভ)</b> - ০৫ জন</li>
+                <li>🅰️ <b>A- (নেগেটিভ)</b> - ০২ জন</li>
+            </ul>
+            <br>
+            <div style="background: #fff0f0; padding: 10px; border-radius: 5px; border: 1px dashed red; text-align: center;">
+                <b style="color: red;">জরুরি রক্ত লাগবে?</b><br>
+                <span style="font-size: 18px;">📞 ০১৭...</span>
+            </div>
+        </aside>
+
+    </div>
 
     <footer>
-        <h3>সরকারি জরুরি সেবা</h3>
-        <div class="emergency-grid">
-            <div class="service-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/999_Logo.svg/1200px-999_Logo.svg.png"><br>৯৯৯</div>
-            <div class="service-box"><img src="https://cdn-icons-png.flaticon.com/512/3063/3063171.png"><br>১৬২৬৩</div>
-            <div class="service-box"><img src="https://cdn-icons-png.flaticon.com/512/784/784867.png"><br>১০২</div>
-        </div>
-        <p style="margin-top: 30px; font-size: 12px; opacity: 0.6;">© ২০২৬ আঁধারে স্বপ্নের আলো ফাউন্ডেশন।</p>
+        <p>© ২০২৬ আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ | মানবতার সেবায় আমরা সর্বদা আপনার পাশে।</p>
+        <p style="font-size: 12px; opacity: 0.7;">Developed with Heart for Humanity</p>
     </footer>
 
-    <div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img"></div>
-
     <script>
-        // স্লাইডার
         let sIdx = 0;
         const slides = document.querySelectorAll('.slide');
         setInterval(() => {
@@ -146,44 +168,6 @@
             sIdx = (sIdx + 1) % slides.length;
             slides[sIdx].classList.add('active');
         }, 4000);
-
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-
-        // প্রবাসী কমিটির তালিকা
-        function showProbashi() {
-            const display = document.getElementById('data-display');
-            display.style.display = 'block';
-            const mList = [
-                {n: "মনির হোসেন", p: "প্রধান উপদেষ্টা"}, {n: "আরিফ হোসেন", p: "সিনিয়র উপদেষ্টা"},
-                {n: "মোঃ ইমরান হোসেন", p: "সভাপতি"}, {n: "সোহাগ হোসেন", p: "সাধারণ সম্পাদক"},
-                {n: "শফিকুল ইসলাম", p: "সিনিয়র সহ-সভাপতি"}, {n: "মোঃ ফয়সাল বেপারী", p: "সহ-সভাপতি"},
-                {n: "বাদশা ফাহাদ", p: "যুগ্ম সাধারণ সম্পাদক"}, {n: "রেদওয়ান আহমেদ", p: "সহ-সাধারণ সম্পাদক"}
-                // ছবির তালিকা অনুযায়ী বাকিদের নাম একইভাবে এখানে যোগ করতে পারবেন।
-            ];
-            let html = `<h3>প্রবাসী কমিটি (২০২৬-২০২৮)</h3><div class="member-grid">`;
-            mList.forEach(m => {
-                html += `<div class="member-card"><strong>${m.n}</strong><br><small>${m.p}</small></div>`;
-            });
-            html += `</div>`;
-            display.innerHTML = html;
-            window.location.href = "#data-display";
-        }
-
-        function showBloodGroups() {
-            const display = document.getElementById('data-display');
-            display.style.display = 'block';
-            const groups = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'];
-            let html = `<h3>ব্লাড ডোনার লিস্ট</h3><div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">`;
-            groups.forEach(g => {
-                html += `<button onclick="alert('${g} ডোনার ডাটা শীঘ্রই আসছে')" style="padding:10px 20px; background:var(--secondary); color:white; border:none; cursor:pointer; border-radius:5px;">${g}</button>`;
-            });
-            html += `</div>`;
-            display.innerHTML = html;
-            window.location.href = "#data-display";
-        }
     </script>
 </body>
 </html>
