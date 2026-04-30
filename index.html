@@ -82,6 +82,31 @@ body {
     color: #34495e; /* পরিষ্কার এবং সুন্দর টেক্সট কালার */
     line-height: 1.7;
     font-size: 16px;
+/* ঝকমকে অ্যানিমেটেড ওয়ালপেপার */
+body {
+    background: linear-gradient(-45deg, #00c6ff, #0072ff, #f953c6, #b91d73) !important;
+    background-size: 400% 400% !important;
+    animation: jhokeMoke 10s ease infinite !important;
+    background-attachment: fixed !important;
+}
+
+@keyframes jhokeMoke {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* সব সাদা বক্স রিমুভ করে লেখা ক্লিয়ার করার জন্য */
+.main-content, .leader-box, .about-text, .content-card, section {
+    background: transparent !important; /* সাদা ব্যাকগ্রাউন্ড মুছে যাবে */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* লেখাগুলো ঝকঝকে সাদা করার জন্য */
+h1, h2, h3, p, li, a, span {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) !important; /* কালো শ্যাডো যাতে লেখা ক্লিয়ার হয় */
 }
 </style> </style>
 </head>
