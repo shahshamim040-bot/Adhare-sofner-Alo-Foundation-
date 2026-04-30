@@ -139,16 +139,32 @@ h1, h2, h3, p, li, a, span {
         </div>
         <a href="#">🅰️ A+ (এ পজিটিভ)</a><a href="#">🅰️ A- (এ নেগেটিভ)</a><a href="#">🅱️ B+ (বি পজিটিভ)</a><a href="#">🅱️ B- (বি নেগেটিভ)</a><a href="#">🅾️ O+ (ও পজিটিভ)</a><a href="#">🅾️ O- (ও নেগেটিভ)</a><a href="#">🆎 AB+ (এবি পজিটিভ)</a><a href="#">🆎 AB- (এবি নেগেটিভ)</a>
     </div>
-
-<header style="text-align: center; padding: 25px 0; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); margin-bottom: 15px; border-bottom: 3px solid #1a237e;">
-    <div style="width: 110px; height: 110px; padding: 5px; background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%, #4facfe 100%); border-radius: 50%; margin: 0 auto 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;">
-        <div style="width: 100%; height: 100%; border-radius: 50%; background: white; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-            <img src="logo.png" alt="Logo" style="width: 90%; height: 90%; object-fit: contain;">
+<header style="text-align: center; padding: 40px 0; background: #f4f7f6; margin-bottom: 20px;">
+    <div style="position: relative; width: 180px; height: 180px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+        
+        <div style="width: 100px; height: 100px; border-radius: 50%; background: white; overflow: hidden; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+            <img src="logo.png" alt="Logo" style="width: 85%; height: 85%; object-fit: contain;">
         </div>
-    </div>
-    <h1 style="color: #1a237e; margin: 0; font-size: 19px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ</h1>
-</header>
 
+        <svg viewBox="0 0 200 200" style="position: absolute; width: 100%; height: 100%; animation: rotateText 10s linear infinite; z-index: 1;">
+            <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="transparent" />
+            <text fill="#1a237e" style="font-family: 'Arial'; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+                <textPath href="#circlePath">
+                    আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ  •  
+                </textPath>
+            </text>
+        </svg>
+    </div>
+
+    <h1 style="color: #1a237e; margin-top: 15px; font-size: 18px; font-weight: bold;">ADHARE SOPNER ALO</h1>
+
+    <style>
+        @keyframes rotateText {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </textPath></style>
+</header>
 
     <div class="slider-container">
         <div class="slides"><img src="slider1.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+1'"></div>
