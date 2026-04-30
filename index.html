@@ -88,50 +88,56 @@
         <div class="slides"><img src="slider2.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+2'"></div>
         <div class="slides"><img src="slider3.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+3'"></div>
     </div>
-<section id="donation-area" style="padding: 30px 15px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 15px; margin: 20px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;">
-        ডোনেশন করুন        <div style="flex: 1; min-width: 300px; max-width: 400px; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 5px solid #27ae60;"            <h3 style="color: #27ae60; margin-top: 0; text-align: center; font-size: 18px;">সহযোগিতা💖</h3>
-            
-            <div style="font-size: 13px; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                <p style="margin: 3px 0;"><b>বিকাশ/নগদ:</b> ০১৮XXXXXXXX</p>
-                <p style="margin: 3px 0;"><b>ব্যাংক:</b> ১২৩-৪৫৬-৭৮৯ (সোনালী ব্যাংক)</p>
+<section style="padding: 15px 10px; background: #fff; margin: 20px 0; border-radius: 15px; font-family: 'Segoe UI', Roboto, sans-serif; border: 1px solid #eee;">
+    <div style="max-width: 500px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 2px solid #27ae60;">
+        
+        <div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); padding: 12px; text-align: center;">
+            <h3 style="color: white; margin: 0; font-size: 18px; letter-spacing: 1px;">ডোনেশন করুন 💖</h3>
+        </div>
+
+        <div style="padding: 15px;">
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px; border-radius: 8px; font-size: 11px; margin-bottom: 12px; line-height: 1.4;">
+                <p style="margin: 0 0 5px 0; color: #166534; font-weight: bold; text-align: center; border-bottom: 1px solid #bbf7d0; padding-bottom: 3px;">ব্যাংক হিসাব তথ্য</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; color: #333;">
+                    <span><b>নাম:</b> আঁধারে স্বপ্নের আলো</span>
+                    <span><b>ব্যাংক:</b> সোনালী (হাজীগঞ্জ)</span>
+                    <span><b>হিসাব:</b> ১২৩-৪৫৬-৭৮৯</span>
+                    <span><b>রাউটিং:</b> ১২৩৪৫৬৭৮৯</span>
+                </div>
+                <p style="margin: 5px 0 0 0; text-align: center; color: #d946ef; font-weight: bold;">বিকাশ/নগদ: ০১৮XXXXXXXX</p>
             </div>
 
-            <form id="donationForm" style="display: flex; flex-direction: column; gap: 8px;">
-                <input type="text" placeholder="আপনার নাম" required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; outline: none;">
-                <input type="number" placeholder="টাকার পরিমাণ" required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; outline: none;">
-                
-                <select required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: white;">
+            <form id="donationForm" style="display: flex; flex-direction: column; gap: 7px;">
+                <div style="display: flex; gap: 7px;">
+                    <input type="text" placeholder="নাম" required style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">
+                    <input type="number" placeholder="টাকা" required style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">
+                </div>
+                <select required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 12px; background: #fff;">
                     <option value="">মাধ্যম বেছে নিন</option>
+                    <option value="bank">ব্যাংক</option>
                     <option value="bkash">বিকাশ</option>
                     <option value="nagad">নগদ</option>
-                    <option value="bank">ব্যাংক</option>
                 </select>
-                
-                <input type="text" placeholder="TrxID বা রেফারেন্স" required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; outline: none;">
-                
-                <button type="submit" style="background: #27ae60; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">নিশ্চিত করুন</button>
+                <input type="text" placeholder="TrxID বা রেফারেন্স" required style="padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-size: 12px;">
+                <button type="submit" style="background: #27ae60; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s;">নিশ্চিত করুন</button>
             </form>
-            <p id="successMsg" style="display: none; color: #27ae60; font-weight: bold; margin-top: 10px; text-align: center; font-size: 14px;">✅ Donation Success! Thank You.</p>
-        </div>
+            <p id="successMsg" style="display: none; color: #27ae60; font-weight: bold; margin-top: 10px; text-align: center; font-size: 13px;">✅ ডোনেশন সফল হয়েছে। ধন্যবাদ!</p>
 
-        <div style="flex: 1; min-width: 250px; max-width: 350px; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 5px solid #1877F2; text-align: center;">
-            <h3 style="color: #1877F2; margin-top: 0; font-size: 18px;">আমাদের ফেসবুক পেজ</h3>
-            <p style="font-size: 14px; color: #666;">আমাদের কার্যক্রমের নিয়মিত আপডেট পেতে যুক্ত থাকুন।</p>
-            <a href="https://www.facebook.com/profile.php?id=100078651475468" target="_blank" style="display: inline-block; background: #1877F2; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; margin-top: 10px; box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3);">
-                Visit Facebook Page
-            </a>
+            <div style="margin-top: 15px; text-align: center; border-top: 1px solid #eee; padding-top: 10px;">
+                <a href="https://www.facebook.com/profile.php?id=100078651475468" target="_blank" style="display: inline-flex; align-items: center; background: #1877F2; color: white; padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 11px; font-weight: bold; gap: 5px;">
+                    <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook এ যুক্ত হন
+                </a>
+            </div>
         </div>
-
     </div>
 </section>
 
 <script>
-    // সাকসেস মেসেজ দেখানোর স্ক্রিপ্ট
     document.getElementById('donationForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        this.style.display = 'none'; // ফর্মটি লুকিয়ে ফেলবে
-        document.getElementById('successMsg').style.display = 'block'; // সাকসেস মেসেজ দেখাবে
+        this.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
     });
 </script>
     <div class="main-content">
