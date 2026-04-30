@@ -46,7 +46,44 @@
         .emergency-footer { background: #111; color: #ffd700; padding: 15px; text-align: center; border-top: 4px solid var(--accent); position: relative; width: 100%; box-sizing: border-box; }
         .emerg-grid { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
         .emerg-item { background: #222; padding: 5px 10px; border-radius: 20px; font-size: 11px; border: 1px solid #444; font-weight: bold; }
-    </style>
+   <style>
+/* ওয়েবসাইটের ব্যাকগ্রাউন্ড বা ওয়ালপেপার */
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('https://www.transparenttextures.com/patterns/cubes.png'), 
+                linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* প্রতিটি সেকশনের জন্য রঙিন বক্স */
+.content-card {
+    background: #ffffff;
+    margin: 20px 15px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 6px solid #27ae60; /* পাশের বর্ডার কালার */
+}
+
+/* শিরোনামের রঙ */
+.content-card h2 {
+    color: #1e3c72; /* গাঢ় নীল */
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #f1c40f;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ভেতরের লেখার রঙ */
+.content-card p, .content-card li {
+    color: #34495e; /* পরিষ্কার এবং সুন্দর টেক্সট কালার */
+    line-height: 1.7;
+    font-size: 16px;
+}
+</style> </style>
 </head>
 <body>
 
