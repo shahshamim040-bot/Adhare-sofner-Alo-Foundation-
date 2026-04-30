@@ -88,41 +88,44 @@
         <div class="slides"><img src="slider2.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+2'"></div>
         <div class="slides"><img src="slider3.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+3'"></div>
     </div>
-<section id="donation" class="donation-section">
-    <div class="container">
-        <h2>ডোনেশন দিন</h2>
-        <p>আপনার সামান্য সাহায্য একটি এতিম বা অসহায় মানুষের স্বপ্ন পূরণ করতে পারে।</p>
-
-        <div class="payment-methods">
-            <div class="method bKash">
-                <img src="https://www.logo.wine/a/logo/BKash/BKash-Logo.wine.svg" alt="bKash">
-                <p>০১৮XXXXXXXX (পার্সোনাল)</p>
-            </div>
-            <div class="method nagad">
-                <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.svg" alt="Nagad">
-                <p>০১৭XXXXXXXX (পার্সোনাল)</p>
-            </div>
+<section id="donation" style="padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 10px; margin: 20px 0; font-family: Arial, sans-serif; text-align: center;">
+    <h2 style="color: #2c3e50; font-size: 22px; margin-bottom: 5px;">ডোনেশন দিন</h2>
+    <p style="font-size: 14px; color: #555; margin-bottom: 20px;">অসহায় মানুষের পাশে দাঁড়াতে আপনার সাহায্য পাঠান</p>
+    
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+        <div style="background: #fdf1f5; padding: 10px 15px; border-radius: 5px; border: 1px solid #d12053;">
+            <span style="font-weight: bold; color: #d12053;">বিকাশ (পার্সোনাল):</span> ০১৮XXXXXXXX
         </div>
-
-        <div class="donation-form">
-            <h3>টাকা পাঠানোর পর নিচের তথ্যগুলো পূরণ করুন</h3>
-            <form id="submit-to-google-sheet">
-                <input type="text" name="name" placeholder="আপনার নাম" required>
-                <input type="email" name="email" placeholder="আপনার ইমেইল (ঐচ্ছিক)">
-                <input type="number" name="amount" placeholder="টাকার পরিমাণ" required>
-                <select name="method" required>
-                    <option value="">পেমেন্ট মাধ্যম সিলেক্ট করুন</option>
-                    <option value="bKash">বিকাশ</option>
-                    <option value="Nagad">নগদ</option>
-                </select>
-                <input type="text" name="transaction_id" placeholder="ট্রানজেকশন আইডি (TrxID)" required>
-                <button type="submit" class="donate-btn">ডোনেশন নিশ্চিত করুন</button>
-            </form>
-            <span id="msg"></span>
+        <div style="background: #fff5ec; padding: 10px 15px; border-radius: 5px; border: 1px solid #f7941d;">
+            <span style="font-weight: bold; color: #f7941d;">নগদ (পার্সোনাল):</span> ০১৭XXXXXXXX
         </div>
     </div>
+
+    <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left; border: 1px solid #ccc; max-width: 450px; margin-left: auto; margin-right: auto;">
+        <h3 style="font-size: 16px; margin-bottom: 10px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px; text-align: center;">ব্যাংক পেমেন্ট ডিটেইলস</h3>
+        <p style="margin: 5px 0;"><strong>ব্যাংকের নাম:</strong> সোনালী/ডাচ-বাংলা (আপনার ব্যাংকের নাম লিখুন)</p>
+        <p style="margin: 5px 0;"><strong>অ্যাকাউন্ট নাম:</strong> আঁধারে স্বপ্নের আলো ফাউন্ডেশন</p>
+        <p style="margin: 5px 0;"><strong>অ্যাকাউন্ট নম্বর:</strong> ১২৩-৪৫৬-৭৮৯</p>
+        <p style="margin: 5px 0;"><strong>রাউটিং নম্বর:</strong> ৯৮৭৬৫৪৩২১</p>
+        <p style="margin: 5px 0;"><strong>শাখা:</strong> আপনার শাখার নাম</p>
+    </div>
+
+    <form style="display: flex; flex-direction: column; gap: 10px; max-width: 450px; margin: 0 auto;">
+        <input type="text" placeholder="আপনার নাম" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+        <input type="number" placeholder="টাকার পরিমাণ" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+        
+        <select style="padding: 12px; border: 1px solid #ccc; border-radius: 5px; background: white;">
+            <option value="">পেমেন্ট মাধ্যম সিলেক্ট করুন</option>
+            <option value="bkash">বিকাশ</option>
+            <option value="nagad">নগদ</option>
+            <option value="bank">ব্যাংক ট্রান্সফার</option>
+        </select>
+        
+        <input type="text" placeholder="ট্রানজেকশন আইডি (TrxID) / রেফারেন্স" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+        <button type="submit" style="background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px;">ডোনেশন নিশ্চিত করুন</button>
+    </form>
+</section>  </div>
 </section>
-    
     <div class="main-content">
         <div class="leader-box">
             <img src="chairman.jpg" alt="Chairman" class="leader-img" onerror="this.src='https://via.placeholder.com/160?text=Chairman'">
