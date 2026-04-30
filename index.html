@@ -89,7 +89,40 @@
         <div class="slides"><img src="slider3.jpg" onerror="this.src='https://via.placeholder.com/800x210?text=Slider+3'"></div>
     </div>
 
-    <div class="donate-banner">💖 ডোনেট করুন (বিকাশ/নগদ): ০১৭XXXXXXXX</div>
+    <section id="donation" class="donation-section">
+    <div class="container">
+        <h2>ডোনেশন দিন</h2>
+        <p>আপনার সামান্য সাহায্য একটি এতিম বা অসহায় মানুষের স্বপ্ন পূরণ করতে পারে।</p>
+
+        <div class="payment-methods">
+            <div class="method bKash">
+                <img src="https://www.logo.wine/a/logo/BKash/BKash-Logo.wine.svg" alt="bKash">
+                <p>০১৮XXXXXXXX (পার্সোনাল)</p>
+            </div>
+            <div class="method nagad">
+                <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.svg" alt="Nagad">
+                <p>০১৭XXXXXXXX (পার্সোনাল)</p>
+            </div>
+        </div>
+
+        <div class="donation-form">
+            <h3>টাকা পাঠানোর পর নিচের তথ্যগুলো পূরণ করুন</h3>
+            <form id="submit-to-google-sheet">
+                <input type="text" name="name" placeholder="আপনার নাম" required>
+                <input type="email" name="email" placeholder="আপনার ইমেইল (ঐচ্ছিক)">
+                <input type="number" name="amount" placeholder="টাকার পরিমাণ" required>
+                <select name="method" required>
+                    <option value="">পেমেন্ট মাধ্যম সিলেক্ট করুন</option>
+                    <option value="bKash">বিকাশ</option>
+                    <option value="Nagad">নগদ</option>
+                </select>
+                <input type="text" name="transaction_id" placeholder="ট্রানজেকশন আইডি (TrxID)" required>
+                <button type="submit" class="donate-btn">ডোনেশন নিশ্চিত করুন</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+    </section>
 
     <div class="main-content">
         <div class="leader-box">
