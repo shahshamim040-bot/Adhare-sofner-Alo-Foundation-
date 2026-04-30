@@ -121,9 +121,95 @@ h1, h2, h3, p, li, a, span {
     <div id="leftNav" class="side-nav left">
         <span class="closebtn" onclick="closeNav('leftNav')">&times;</span>
         <button class="dropdown-btn">🌍 প্রবাসী শাখা (পূর্ণাঙ্গ তালিকা) ▼</button>
-        <div class="dropdown-container">
-            <a href="#">মনির হোসেন (প্রধান উপদেষ্টা)</a><a href="#">আরিফ হোসেন (সিনিয়র উপদেষ্টা)</a><a href="#">সাইফুল ইসলাম (উপদেষ্টা)</a><a href="#">শরিফুল ইসলাম (উপদেষ্টা)</a><a href="#">জসিম বেপারী (উপদেষ্টা)</a><a href="#">জামাল হোসেন (উপদেষ্টা)</a><a href="#">মোঃ ইমরান হোসেন (সভাপতি)</a><a href="#">শফিকুল ইসলাম (সিনিয়র সহ-সভাপতি)</a><a href="#">মোঃ ফয়সাল বেপারী (সহ-সভাপতি)</a><a href="#">জুয়েল হোসেন (সহ-সভাপতি)</a><a href="#">সোহাগ হোসেন (সাধারণ সম্পাদক)</a><a href="#">বাদশা ফাহাদ (যুগ্ম সাধারণ সম্পাদক)</a><a href="#">মোঃ রেদওয়ান আহমেদ (সহ-সাধারণ সম্পাদক)</a><a href="#">হাফেজ মোহাম্মদ রাসেল (সাংগঠনিক সম্পাদক)</a><a href="#">আব্দুল কাইয়ুম (সহ-সাংগঠনিক সম্পাদক)</a><a href="#">রবিউল হোসেন (সহ-সাংগঠনিক সম্পাদক)</a><a href="#">রুবেল আহমেদ (সহ-সাংগঠনিক সম্পাদক)</a><a href="#">মোহাম্মদ মাহির ফয়সাল (শিক্ষা সম্পাদক)</a><a href="#">শামীম হোসেন (সহ-শিক্ষা সম্পাদক)</a><a href="#">হাফেজ মোহাম্মদ নাহিদ (ধর্মীয় সম্পাদক)</a><a href="#">হৃদয় ব্যাপারি (সাংস্কৃতিক সম্পাদক)</a><a href="#">মোহাম্মদ আল আমিন (দপ্তর সম্পাদক)</a><a href="#">কামাল হোসেন সাগর (অর্থ সম্পাদক)</a><a href="#">মোহাম্মদ আহাদ (প্রচার সম্পাদক)</a><a href="#">মোহাম্মদ রাজিব (যোগাযোগ সম্পাদক)</a><a href="#">রাকিব (সদস্য)</a><a href="#">রনি (সদস্য)</a>
-        </div>
+        <div id="leftNav" class="side-nav left">
+    <span class="closebtn" onclick="closeNav('leftNav')">&times;</span>
+    
+    <style>
+        .member-card { padding: 12px 15px; border-bottom: 1px solid #333; background: rgba(255,255,255,0.05); margin-bottom: 5px; }
+        .m-name { color: #fff; font-weight: bold; font-size: 15px; display: block; border-left: 3px solid #ffd700; padding-left: 8px; }
+        .m-pos { color: #ccc; font-size: 13px; display: block; margin: 3px 0 6px 11px; }
+        .m-contact { display: flex; gap: 20px; margin-left: 11px; }
+        .m-contact a { color: #00ffcc !important; font-size: 12px !important; text-decoration: none; display: flex; align-items: center; gap: 5px; padding: 0 !important; }
+    </style>
+
+    <button class="dropdown-btn">🌍 উপদেষ্টা পরিষদ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">১. মনির হোসেন</span><span class="m-pos">প্রধান উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২. আরিফ হোসেন</span><span class="m-pos">সিনিয়র উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩. সাইফুল ইসলাম</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৪. শরিফুল ইসলাম</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৫. জসিম বেপারী</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৬. জামাল হোসেন</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">🤝 নির্বাহী পরিষদ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">১. মোঃ ইমরান হোসেন</span><span class="m-pos">সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২. শফিকুল ইসলাম</span><span class="m-pos">সিনিয়র সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩. মোঃ ফয়সাল বেপারী</span><span class="m-pos">সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৪. জুয়েল হোসেন</span><span class="m-pos">সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৫. সোহাগ হোসেন</span><span class="m-pos">সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৬. বাদশা ফাহাদ</span><span class="m-pos">যুগ্ম সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৭. মোঃ রেদওয়ান আহমেদ</span><span class="m-pos">সহ-সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৮. হাফেজ মোহাম্মদ রাসেল</span><span class="m-pos">সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৯. আব্দুল কাইয়ুম</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১০. রবিউল হোসেন</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১১. রুবেল আহমেদ</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">📚 শিক্ষা ও সংস্কৃতি বিভাগ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">১২. মোহাম্মদ মাহির ফয়সাল</span><span class="m-pos">শিক্ষা বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১৩. শামীম হোসেন</span><span class="m-pos">সহ-শিক্ষা বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১৪. হাফেজ মোহাম্মদ নাহিদ</span><span class="m-pos">ধর্মীয় বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১৫. হৃদয় ব্যাপারী</span><span class="m-pos">সাংস্কৃতিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১৬. জামাল হোসেন</span><span class="m-pos">প্রশিক্ষণ ও উন্নয়ন সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">🏢 প্রশাসন ও দপ্তর বিভাগ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">১৭. মোহাম্মদ আল আমিন</span><span class="m-pos">দপ্তর সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">১৮. মীর সাব্বির অন্তর</span><span class="m-pos">সহ-দপ্তর সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">💰 অর্থ ও পরিকল্পনা বিভাগ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">১৯. কামাল হোসেন সাগর</span><span class="m-pos">অর্থ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২০. মোহাম্মদ ইব্রাহিম</span><span class="m-pos">সহ-অর্থ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২১. মোঃ রাসেল হোসেন</span><span class="m-pos">পরিকল্পনা ও উন্নয়ন সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">🌱 সামাজিক বিভাগ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">২২. মোঃ সৈকত</span><span class="m-pos">সমাজসেবা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৩. রাকিব আল হাসান</span><span class="m-pos">মানবিক সহায়তা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৪. আকাশ খান জুয়েল</span><span class="m-pos">প্রবাসী কল্যাণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৫. মোহাম্মদ আল আমিন খান</span><span class="m-pos">পরিবেশ বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">📢 প্রচার ও প্রযুক্তি বিভাগ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">২৬. মোহাম্মদ আহাদ</span><span class="m-pos">প্রচার সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৭. মোঃ সাকিব</span><span class="m-pos">সহ-প্রচার সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৮. নীরব মজুমদার</span><span class="m-pos">আন্তর্জাতিক বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">২৯. নাজমুল কবির</span><span class="m-pos">ক্রীড়া সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩০. সোহেল হোসেন</span><span class="m-pos">মিডিয়া ও প্রকাশনা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩১. আল আমিন হোসেন</span><span class="m-pos">তথ্য ও প্রযুক্তি সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩২. মোহাম্মদ রাজিব</span><span class="m-pos">যোগাযোগ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৩. মোঃ রাব্বি বেপারী</span><span class="m-pos">সহ-যোগাযোগ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৪. মোঃ হাবিব</span><span class="m-pos">যুব ও স্বেচ্ছাসেবক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৫. মোঃ সুমন</span><span class="m-pos">ত্রাণ ও দুর্যোগ ব্যবস্থাপনা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৬. মোঃ শামীম হোসেন</span><span class="m-pos">স্বাস্থ্য বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৭. মেহেদী হাসান</span><span class="m-pos">সাহিত্য ও গবেষণা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+
+    <button class="dropdown-btn">👥 কার্যনির্বাহী সদস্যবৃন্দ <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-container">
+        <div class="member-card"><span class="m-name">৩৮. রাকিব</span><span class="m-pos">কার্যনির্বাহী সদস্য</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card"><span class="m-name">৩৯. রনি</span><span class="m-pos">কার্যনির্বাহী সদস্য</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+    </div>
+</div>
+
         <button class="dropdown-btn">🇧🇩 বাংলাদেশ শাখা ▼</button>
         <div class="dropdown-container">
             <a href="#">মোঃ মীর হোসাইন (রাজু) পাটোয়ারী (সভাপতি)</a>
