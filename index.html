@@ -110,14 +110,18 @@ h1, h2, h3, p, li, a, span {
 }
 </style> </style>
 </head>
-<body>
 
-    <div class="top-nav">
-        <div class="menu-icon" onclick="openNav('leftNav')">☰ কমিটি মেনু</div>
-        <div style="font-size: 12px; font-weight: bold; letter-spacing: 1px;">SOPNER ALO FOUNDATION</div>
-        <div class="menu-icon" onclick="openNav('rightNav')">রক্ত দান মেনু ☰</div>
+<header style="background: #1a237e; padding: 12px 15px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #ffcc00; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div style="color: white; font-size: 13px; font-weight: bold; line-height: 1.2; font-family: 'Arial', sans-serif; letter-spacing: 0.5px;">
+        ADHARER SOPNER ALO<br>FOUNDATION
     </div>
-
+    
+    <div style="display: flex; gap: 8px;">
+        <a href="#about" style="background: #ffffff; color: #1a237e; padding: 6px 10px; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: bold; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">সম্পর্কে</a>
+        <a href="#gallery" style="background: #3949ab; color: white; padding: 6px 10px; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 500;">গ্যালারি</a>
+        <a href="#contact" style="background: #e53935; color: white; padding: 6px 10px; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: 500;">যোগাযোগ</a>
+    </div>
+</header>
     <div id="leftNav" class="side-nav left">
         <span class="closebtn" onclick="closeNav('leftNav')">&times;</span>
         <button class="dropdown-btn">🌍 প্রবাসী শাখা (পূর্ণাঙ্গ তালিকা) ▼</button>
