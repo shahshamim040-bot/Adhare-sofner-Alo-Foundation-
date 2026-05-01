@@ -3,73 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>অ্যাডমিন কন্ট্রোল প্যানেল</title>
+    <title>মাস্টার অ্যাডমিন প্যানেল - ASAFBA</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 850px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #1a237e; }
-        .header-area { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; }
-        h1 { color: #1a237e; margin: 0; font-size: 24px; }
-        .btn-logout { background: #d32f2f; color: white; padding: 8px 15px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; }
-        
-        .update-section { background: #fafafa; padding: 20px; border: 1px solid #e0e0e0; border-radius: 12px; margin-bottom: 20px; }
-        label { font-weight: bold; display: block; margin-bottom: 10px; color: #444; font-size: 15px; }
-        textarea, input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; box-sizing: border-box; font-size: 15px; font-family: inherit; }
-        
-        .btn-save { background: #1a237e; color: white; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; transition: 0.3s; }
-        .btn-save:hover { background: #2e7d32; }
-        
-        .info-box { background: #e8f5e9; color: #2e7d32; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 500; border-left: 5px solid #4caf50; margin-top: 15px; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid #1a237e; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { color: #1a237e; font-size: 22px; margin: 0; }
+        .section-box { background: #fafafa; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; margin-bottom: 25px; }
+        .section-title { font-weight: bold; color: #d32f2f; margin-bottom: 15px; display: block; border-left: 4px solid #d32f2f; padding-left: 10px; font-size: 16px; }
+        label { font-weight: bold; display: block; margin-top: 15px; font-size: 14px; color: #444; }
+        textarea, input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 5px; box-sizing: border-box; font-family: inherit; font-size: 14px; }
+        .btn-save { background: #2e7d32; color: white; padding: 18px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; font-size: 18px; transition: 0.3s; margin-top: 20px; }
+        .btn-save:hover { background: #1b5e20; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .btn-logout { background: #d32f2f; color: white; padding: 8px 15px; border: none; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; }
+        .hint { font-size: 11px; color: #888; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-area">
-        <h1>অ্যাডমিন কন্ট্রোল প্যানেল</h1>
+    <div class="header">
+        <h1>সংগঠন তথ্য নিয়ন্ত্রণ প্যানেল</h1>
         <a href="login.html" class="btn-logout">লগ আউট</a>
     </div>
 
-    <div class="update-section">
-        <label>সংগঠনের লক্ষ্য ও উদ্দেশ্য পরিবর্তন করুন:</label>
-        <textarea rows="8" id="aboutText" placeholder="এখানে নতুন তথ্য বা উদ্দেশ্য লিখুন..."></textarea>
+    <div class="section-box">
+        <span class="section-title">১. লক্ষ্য, উদ্দেশ্য ও ভূমিকা</span>
+        <label>সংগঠনের লক্ষ্য ও উদ্দেশ্য:</label>
+        <textarea id="goal" rows="5" placeholder="লক্ষ্য ও উদ্দেশ্য লিখুন..."></textarea>
         
-        <label>জরুরি যোগাযোগ নম্বর (যেমন- পুলিশ: ৯৯৯, ফায়ার: ১০২):</label>
-        <input type="text" id="emergencyNum" placeholder="জরুরি নম্বরগুলো এখানে লিখুন">
-        
-        <button class="btn-save" onclick="updateNow()">পরিবর্তন সংরক্ষণ করুন</button>
-        
-        <div id="statusMsg" class="info-box" style="display: none;">
-            ✅ তথ্যগুলো সফলভাবে আপডেট করা হয়েছে!
-        </div>
+        <label>ভূমিকাঃ</label>
+        <textarea id="role" rows="4" placeholder="সংগঠনের ভূমিকা লিখুন..."></textarea>
     </div>
 
-    <p style="text-align: center; font-size: 12px; color: #888;">© ২০২৬ আঁধারে স্বপ্নের আলো ফাউন্ডেশন - অ্যাডমিন প্যানেল v১.০</p>
+    <div class="section-box">
+        <span class="section-title">২. কর্মসূচী (এ টু জেড)</span>
+        <label>সংগঠনের সকল কর্মসূচী:</label>
+        <textarea id="programs" rows="6" placeholder="১। পাঠাগার... ২। রক্তদান..."></textarea>
+        <div class="hint">টিপস: নম্বর দিয়ে সিরিয়াল করে লিখলে দেখতে সুন্দর লাগবে।</div>
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">৩. সভাপতি ও সাধারণ সম্পাদক</span>
+        <label>প্রতিষ্ঠাতা সভাপতির নাম:</label>
+        <input type="text" id="leader1" placeholder="মোঃ মীর হোসাইন (রাজু) পাটোয়ারী">
+        
+        <label>প্রতিষ্ঠাতা ও সাধারণ সম্পাদকের নাম:</label>
+        <input type="text" id="leader2" placeholder="মোহাম্মদ রাশেদুল হাসান">
+    </div>
+
+    <div class="section-box">
+        <span class="section-title">৪. ডোনেশন ও জরুরি নম্বর</span>
+        <label>বিকাশ/নগদ নম্বর:</label>
+        <input type="text" id="mfs" placeholder="বিকাশ/নগদ: ০১৮XXXXXXXX">
+        
+        <label>ব্যাংক হিসাব তথ্য:</label>
+        <textarea id="bank_info" rows="3" placeholder="নাম, ব্যাংক, হিসাব নম্বর..."></textarea>
+
+        <label>জরুরি সেবা (এম্বুলেন্স/পুলিশ ইত্যাদি):</label>
+        <input type="text" id="emergency" placeholder="এম্বুলেন্স: ৯৯৯, পুলিশ: ৯৯৯">
+    </div>
+
+    <button class="btn-save" onclick="saveMasterData()">সব পরিবর্তন একসাথে আপডেট করুন ✅</button>
 </div>
 
 <script>
-    // আগের ডাটা থাকলে তা বক্সে লোড করা
+    // ড্যাশবোর্ড লোড হলে আগের ডাটাগুলো বক্সে দেখাবে
     window.onload = function() {
-        document.getElementById('aboutText').value = localStorage.getItem('site_about') || "";
-        document.getElementById('emergencyNum').value = localStorage.getItem('site_emergency') || "";
+        document.getElementById('goal').value = localStorage.getItem('db_goal') || "";
+        document.getElementById('role').value = localStorage.getItem('db_role') || "";
+        document.getElementById('programs').value = localStorage.getItem('db_programs') || "";
+        document.getElementById('leader1').value = localStorage.getItem('db_leader1') || "";
+        document.getElementById('leader2').value = localStorage.getItem('db_leader2') || "";
+        document.getElementById('mfs').value = localStorage.getItem('db_mfs') || "";
+        document.getElementById('bank_info').value = localStorage.getItem('db_bank') || "";
+        document.getElementById('emergency').value = localStorage.getItem('db_emergency') || "";
     };
 
-    function updateNow() {
-        const aboutValue = document.getElementById('aboutText').value;
-        const emergencyValue = document.getElementById('emergencyNum').value;
+    function saveMasterData() {
+        // সব বক্স থেকে ডাটা মেমোরিতে সেভ করা
+        localStorage.setItem('db_goal', document.getElementById('goal').value);
+        localStorage.setItem('db_role', document.getElementById('role').value);
+        localStorage.setItem('db_programs', document.getElementById('programs').value);
+        localStorage.setItem('db_leader1', document.getElementById('leader1').value);
+        localStorage.setItem('db_leader2', document.getElementById('leader2').value);
+        localStorage.setItem('db_mfs', document.getElementById('mfs').value);
+        localStorage.setItem('db_bank', document.getElementById('bank_info').value);
+        localStorage.setItem('db_emergency', document.getElementById('emergency').value);
 
-        // ডাটা লোকাল মেমোরিতে সেভ করা
-        localStorage.setItem('site_about', aboutValue);
-        localStorage.setItem('site_emergency', emergencyValue);
-
-        // স্ট্যাটাস মেসেজ দেখানো
-        const msg = document.getElementById('statusMsg');
-        msg.style.display = 'block';
-        
-        setTimeout(() => {
-            msg.style.display = 'none';
-        }, 3000);
-
-        alert("পরিবর্তনগুলো সংরক্ষিত হয়েছে। (গিটহাব স্ট্যাটিক সাইট হওয়ায় মেইন সাইটে এটি যুক্ত করতে Firebase কানেকশন প্রয়োজন)");
+        alert("সফলভাবে আপডেট হয়েছে! \n\nমনে রাখবেন: স্থায়ীভাবে সবার জন্য আপডেট করতে কোডে Firebase কানেক্ট করতে হবে।");
     }
 </script>
 
