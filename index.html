@@ -107,8 +107,9 @@ body {
 h1, h2, h3, p, li, a, span {
     div style="display: flex; justify-content: space-between; align-items: center; padding: 0 5px; margin-bottom: 6px;">
  <header style="background: #1a237e; padding: 5px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
-    <style>
-    /* মেম্বার কার্ডের হারিয়ে যাওয়া ডিজাইন ফিরিয়ে আনা হলো */
+<style>
+    /* এই কোডটি মেম্বারদের লিস্টকে মেনুর ভেতরে সুন্দরভাবে সাজিয়ে রাখবে */
+    .dropdown-container { display: none; background-color: #262626; padding-left: 8px; overflow: hidden; }
     .member-card { padding: 12px 15px; border-bottom: 1px solid #333; background: rgba(255,255,255,0.05); margin-bottom: 5px; }
     .m-name { color: #fff; font-weight: bold; font-size: 15px; display: block; border-left: 3px solid #ffd700; padding-left: 10px; }
     .m-pos { color: #ccc; font-size: 13px; display: block; margin: 3px 0 8px 11px; }
@@ -122,7 +123,7 @@ h1, h2, h3, p, li, a, span {
         <div style="color: white; font-size: 11px; font-weight: bold; cursor: pointer;" onclick="openNav('rightNav')">ব্লাড ডোনার 🩸</div>
     </div>
 
-    <div style="color: white; font-size: 11px; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 8px;">
+    <div style="color: white; font-size: 10px; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 8px;">
         ADHARER SOPNER ALO FOUNDATION
     </div>
 
@@ -138,6 +139,7 @@ h1, h2, h3, p, li, a, span {
         <div style="cursor: pointer; color: white; font-size: 26px;" onclick="openNav('rightNav')">☰</div>
     </div>
 </header>
+
 
     <button class="dropdown-btn">🌍 উপদেষ্টা পরিষদ <i class="fa fa-caret-down"></i></button>
     <div class="dropdown-container">
