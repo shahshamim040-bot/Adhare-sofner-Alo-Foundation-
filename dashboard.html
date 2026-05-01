@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অ্যাডমিন কন্ট্রোল প্যানেল</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #1a237e; }
+        .header-area { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { color: #1a237e; margin: 0; font-size: 24px; }
+        .btn-logout { background: #d32f2f; color: white; padding: 8px 15px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; }
+        
+        .update-section { background: #fafafa; padding: 20px; border: 1px solid #e0e0e0; border-radius: 12px; margin-bottom: 20px; }
+        label { font-weight: bold; display: block; margin-bottom: 10px; color: #444; font-size: 15px; }
+        textarea, input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; box-sizing: border-box; font-size: 15px; font-family: inherit; }
+        
+        .btn-save { background: #1a237e; color: white; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; transition: 0.3s; }
+        .btn-save:hover { background: #2e7d32; }
+        
+        .info-box { background: #e8f5e9; color: #2e7d32; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 500; border-left: 5px solid #4caf50; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-area">
+        <h1>অ্যাডমিন কন্ট্রোল প্যানেল</h1>
+        <a href="login.html" class="btn-logout">লগ আউট</a>
+    </div>
+
+    <div class="update-section">
+        <label>সংগঠনের লক্ষ্য ও উদ্দেশ্য পরিবর্তন করুন:</label>
+        <textarea rows="8" id="aboutText" placeholder="এখানে নতুন তথ্য বা উদ্দেশ্য লিখুন..."></textarea>
+        
+        <label>জরুরি যোগাযোগ নম্বর (যেমন- পুলিশ: ৯৯৯, ফায়ার: ১০২):</label>
+        <input type="text" id="emergencyNum" placeholder="জরুরি নম্বরগুলো এখানে লিখুন">
+        
+        <button class="btn-save" onclick="updateNow()">পরিবর্তন সংরক্ষণ করুন</button>
+        
+        <div id="statusMsg" class="info-box" style="display: none;">
+            ✅ তথ্যগুলো সফলভাবে আপডেট করা হয়েছে!
+        </div>
+    </div>
+
+    <p style="text-align: center; font-size: 12px; color: #888;">© ২০২৬ আঁধারে স্বপ্নের আলো ফাউন্ডেশন - অ্যাডমিন প্যানেল v১.০</p>
+</div>
+
+<script>
+    // আগের ডাটা থাকলে তা বক্সে লোড করা
+    window.onload = function() {
+        document.getElementById('aboutText').value = localStorage.getItem('site_about') || "";
+        document.getElementById('emergencyNum').value = localStorage.getItem('site_emergency') || "";
+    };
+
+    function updateNow() {
+        const aboutValue = document.getElementById('aboutText').value;
+        const emergencyValue = document.getElementById('emergencyNum').value;
+
+        // ডাটা লোকাল মেমোরিতে সেভ করা
+        localStorage.setItem('site_about', aboutValue);
+        localStorage.setItem('site_emergency', emergencyValue);
+
+        // স্ট্যাটাস মেসেজ দেখানো
+        const msg = document.getElementById('statusMsg');
+        msg.style.display = 'block';
+        
+        setTimeout(() => {
+            msg.style.display = 'none';
+        }, 3000);
+
+        alert("পরিবর্তনগুলো সংরক্ষিত হয়েছে। (গিটহাব স্ট্যাটিক সাইট হওয়ায় মেইন সাইটে এটি যুক্ত করতে Firebase কানেকশন প্রয়োজন)");
+    }
+</script>
+
+</body>
+</html>
