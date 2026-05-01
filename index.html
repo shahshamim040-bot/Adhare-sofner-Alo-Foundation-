@@ -105,138 +105,90 @@ body {
 
 /* লেখাগুলো ঝকঝকে সাদা করার জন্য *
     
-</style>
 
-<header style="background: #1a237e; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <div onclick="openNav()" style="cursor: pointer; color: white; font-size: 18px; font-weight: bold;">☰ কমিটি লিস্ট</div>
-        <div style="color: white; font-size: 12px; font-weight: bold;">ব্লাড ডোনার 🩸</div>
+<header style="background: #1a237e; padding: 10px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    <div onclick="openLeft()" style="cursor: pointer; color: white; text-align: center;">
+        <span style="font-size: 20px;">☰</span><br><span style="font-size: 10px;">কমিটি লিস্ট</span>
     </div>
-    <div style="text-align: center; color: white; font-size: 10px; letter-spacing: 1px; margin-bottom: 10px;">ADHARER SOPNER ALO FOUNDATION</div>
-    <div style="display: flex; justify-content: center; gap: 8px;">
-        <a href="#about" style="background: white; color: #1a237e; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">সম্পর্কে</a>
-        <a href="#gallery" style="background: #3949ab; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">গ্যালারি</a>
-        <a href="#contact" style="background: #e53935; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">যোগাযোগ</a>
+    <div style="color: white; font-size: 11px; font-weight: bold; text-align: center;">ADHARER SOPNER ALO<br>FOUNDATION</div>
+    <div onclick="openRight()" style="cursor: pointer; color: #ff5252; text-align: center;">
+        <span style="font-size: 20px;">🩸</span><br><span style="font-size: 10px; color: white;">ব্লাড ডোনার</span>
     </div>
 </header>
 
-<div id="mySidenav" class="sidenav" style="height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #1a237e; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
-    <a href="javascript:void(0)" onclick="closeNav()" style="font-size: 30px; color: white; position: absolute; top: 10px; right: 25px; text-decoration: none;">&times;</a>
-    
-    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">✈️ প্রবাসী শাখা ▼</button>
-    <div class="dropdown-container" style="display: none; background: #0d124a;">
-        <script>
-            const members = [
-                {n: "মনির হোসেন", p: "প্রধান উপদেষ্টা"}, {n: "আরিফ হোসেন", p: "সিনিয়র উপদেষ্টা"},
-                {n: "সাইফুল ইসলাম", p: "উপদেষ্টা"}, {n: "শরিফুল ইসলাম", p: "উপদেষ্টা"},
-                {n: "জসিম বেপারী", p: "উপদেষ্টা"}, {n: "জামাল হোসেন", p: "উপদেষ্টা"},
-                {n: "মোঃ ইমরান হোসেন", p: "সভাপতি"}, {n: "শফিকুল ইসলাম", p: "সিনিয়র সহ-সভাপতি"},
-                {n: "মোঃ ফয়সাল বেপারী", p: "সহ-সভাপতি"}, {n: "জুয়েল হোসেন", p: "সহ-সভাপতি"},
-                {n: "সোহাগ হোসেন", p: "সাধারণ সম্পাদক"}, {n: "বাদশা ফাহাদ", p: "যুগ্ম সাধারণ সম্পাদক"},
-                {n: "মোঃ রেদওয়ান আহমেদ", p: "সহ-সাধারণ সম্পাদক"}, {n: "হাফেজ মোহাম্মদ রাসেল", p: "সাংগঠনিক সম্পাদক"},
-                {n: "আব্দুল কাইয়ুম", p: "সহ-সাংগঠনিক সম্পাদক"}, {n: "রবিউল হোসেন", p: "সহ-সাংগঠনিক সম্পাদক"},
-                {n: "রুবেল আহমেদ", p: "সহ-সাংগঠনিক সম্পাদক"}, {n: "মোহাম্মদ মাহির ফয়সাল", p: "শিক্ষা বিষয়ক সম্পাদক"},
-                {n: "শামীম হোসেন", p: "সহ-শিক্ষা বিষয়ক সম্পাদক"}, {n: "হাফেজ মোহাম্মদ নাহিদ", p: "ধর্মীয় বিষয়ক সম্পাদক"},
-                {n: "হৃদয় বেপারী", p: "সাংস্কৃতিক সম্পাদক"}, {n: "জামাল হোসেন", p: "প্রশিক্ষণ ও উন্নয়ন সম্পাদক"},
-                {n: "মোহাম্মদ আল আমিন", p: "দপ্তর সম্পাদক"}, {n: "মীর সাব্বির অন্তর", p: "সহ-দপ্তর সম্পাদক"},
-                {n: "কামাল হোসেন সাগর", p: "অর্থ সম্পাদক"}, {n: "মোহাম্মদ ইব্রাহিম", p: "সহ-অর্থ সম্পাদক"},
-                {n: "মোঃ রাসেল হোসেন", p: "পরিকল্পনা ও উন্নয়ন সম্পাদক"}, {n: "মোঃ সৈকত", p: "সমাজসেবা সম্পাদক"},
-                {n: "রাকিব আল হাসান", p: "মানবিক সহায়তা সম্পাদক"}, {n: "আকাশ খান জুয়েল", p: "প্রবাসী কল্যাণ সম্পাদক"},
-                {n: "মোহাম্মদ আল আমিন খান", p: "পরিবেশ বিষয়ক সম্পাদক"}, {n: "মোহাম্মদ আহাদ", p: "প্রচার সম্পাদক"},
-                {n: "মোঃ সাকিব", p: "সহ-প্রচার সম্পাদক"}, {n: "নীরব মজুমদার", p: "আন্তর্জাতিক বিষয়ক সম্পাদক"},
-                {n: "নাজমুল কবির", p: "ক্রীড়া সম্পাদক"}, {n: "সোহেল হোসেন", p: "মিডিয়া ও প্রকাশনা সম্পাদক"},
-                {n: "আল আমিন হোসেন", p: "তথ্য ও প্রযুক্তি সম্পাদক"}, {n: "মোহাম্মদ রাজিব", p: "যোগাযোগ সম্পাদক"},
-                {n: "মোঃ রাব্বি বেপারী", p: "সহ-যোগাযোগ সম্পাদক"}
-            ];
+<style>
+    .sidenav { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; background-color: #1a237e; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
+    .left-nav { left: 0; }
+    .right-nav { right: 0; }
+    .dropdown-btn { width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .dropdown-container { display: none; background-color: #0d124a; }
+    .member-card { padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); color: white; font-size: 13px; }
+    .h-yellow { background: #ffd700; color: #000; padding: 8px; text-align: center; font-weight: bold; font-size: 14px; }
+    .h-green { background: #00e676; color: #000; padding: 8px; text-align: center; font-weight: bold; font-size: 14px; margin-top: 10px; }
+</style>
 
-            members.forEach((m, i) => {
-                document.write(`
-                    <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
-                        <span style="color: #ffd700; font-weight: bold; font-size: 14px;">${i+1}. ${m.n}</span><br>
-                        <span style="color: #eee; font-size: 12px;">${m.p}</span><br>
-                        <div style="margin-top: 5px;">
-                            <a href="tel:000" style="color: #00ffcc; font-size: 11px; text-decoration: none; margin-right: 10px;">📞 কল</a>
-                            <a href="mailto:info@foundation.com" style="color: #00ffcc; font-size: 11px; text-decoration: none;">✉️ ইমেইল</a>
-                        </div>
-                    </div>
-                `);
-            });
-        </script>
-    </div>
-
-    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">🇧🇩 বাংলাদেশ শাখা ▼</button>
-    <div class="dropdown-container" style="display: none; background: #0d124a;">
-        <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
-            <span style="color: #fff; font-weight: bold;">১. মোঃ মীর রাসেল (বাবু) পাটোয়ারী</span><br>
-            <span style="color: #00ffcc; font-size: 12px;">প্রতিষ্ঠাতা সভাপতি</span>
-        </div>
-        <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
-            <span style="color: #fff; font-weight: bold;">২. মোহাম্মদ রাশেদুল হাসান</span><br>
-            <span style="color: #00ffcc; font-size: 12px;">প্রতিষ্ঠাতা সেক্রেটারি</span>
-        </div>
-    </div>
-
-    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">👥 সাধারণ সদস্য ▼</button>
-    <div class="dropdown-container" style="display: none; background: #0d124a;">
-        <div style="padding: 20px; color: #ccc; text-align: center;">তালিকা শীঘ্রই আসছে...</div>
-    </div>
-</div>
-    <button class="dropdown-btn">📢 প্রচার ও প্রযুক্তি বিভাগ <i class="fa fa-caret-down"></i></button>
+<div id="leftNav" class="sidenav left-nav">
+    <a href="javascript:void(0)" onclick="closeLeft()" style="position: absolute; top: 10px; right: 20px; font-size: 30px; color: white; text-decoration: none;">&times;</a>
+    <button class="dropdown-btn">✈️ প্রবাসী শাখা ▼</button>
     <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">২৬. মোহাম্মদ আহাদ</span><span class="m-pos">প্রচার সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৭. মোঃ সাকিব</span><span class="m-pos">সহ-প্রচার সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৮. নীরব মজুমদার</span><span class="m-pos">আন্তর্জাতিক বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৯. নাজমুল কবির</span><span class="m-pos">ক্রীড়া সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩০. সোহেল হোসেন</span><span class="m-pos">মিডিয়া ও প্রকাশনা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩১. আল আমিন হোসেন</span><span class="m-pos">তথ্য ও প্রযুক্তি সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩২. মোহাম্মদ রাজিব</span><span class="m-pos">যোগাযোগ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৩. মোঃ রাব্বি বেপারী</span><span class="m-pos">সহ-যোগাযোগ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৪. মোঃ হাবিব</span><span class="m-pos">যুব ও স্বেচ্ছাসেবক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৫. মোঃ সুমন</span><span class="m-pos">ত্রাণ ও দুর্যোগ ব্যবস্থাপনা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৬. মোঃ শামীম হোসেন</span><span class="m-pos">স্বাস্থ্য বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৭. মেহেদী হাসান</span><span class="m-pos">সাহিত্য ও গবেষণা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">👥 কার্যনির্বাহী সদস্যবৃন্দ <i class="fa fa-caret-down"></i></button>
+        <div class="h-yellow">📜 উপদেষ্টা পরিষদ (০৬ জন)</div>
+        <div class="member-card">১. মনির হোসেন (প্রধান উপদেষ্টা)</div>
+        <div class="member-card">২. আরিফ হোসেন (সিনিয়র উপদেষ্টা)</div>
+        <div class="member-card">৩. সাইফুল ইসলাম (উপদেষ্টা)</div>
+        <div class="member-card">৪. শরিফুল ইসলাম (উপদেষ্টা)</div>
+        <div class="member-card">৫. জসিম বেপারী (উপদেষ্টা)</div>
+        <div class="member-card">৬. জামাল হোসেন (উপদেষ্টা)</div>
+        <div class="h-green">⚖️ নির্বাহী পরিষদ</div>
+        <div class="member-card">১. মোঃ ইমরান হোসেন (সভাপতি)</div>
+        <div class="member-card">২. শফিকুল ইসলাম (সিনিয়র সহ-সভাপতি)</div>
+        <div class="member-card">৩. মোঃ ফয়সাল বেপারী (সহ-সভাপতি)</div>
+        </div>
+    <button class="dropdown-btn">🇧🇩 বাংলাদেশি শাখা ▼</button>
     <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">৩৮. রাকিব</span><span class="m-pos">কার্যনির্বাহী সদস্য</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩৯. রনি</span><span class="m-pos">কার্যনির্বাহী সদস্য</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
+        <div class="member-card">১. মোঃ মীর রাসেল (বাবু) পাটোয়ারী (সভাপতি)</div>
+        <div class="member-card">২. মোহাম্মদ রাশেদুল হাসান (সেক্রেটারি)</div>
     </div>
 </div>
 
-        <button class="dropdown-btn">🇧🇩 বাংলাদেশ শাখা ▼</button>
-        <div class="dropdown-container">
-            <a href="#">মোঃ মীর হোসাইন (রাজু) পাটোয়ারী (সভাপতি)</a>
-            <a href="#">মোহাম্মদ রাশেদুল হাসান (সম্পাদক)</a>
-        </div>
-        <button class="dropdown-btn">👥 সাধারণ সদস্য ▼</button>
-    </div>
+<div id="rightNav" class="sidenav right-nav">
+    <a href="javascript:void(0)" onclick="closeRight()" style="position: absolute; top: 10px; left: 20px; font-size: 30px; color: white; text-decoration: none;">&times;</a>
+    <div style="color: #ff5252; text-align: center; padding: 10px; font-weight: bold;">🩸 রক্তদাতার তালিকা</div>
+    <button class="dropdown-btn">🅰️ A+ (পজিটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🅰️ A- (নেগেটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🅱️ B+ (পজিটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🅱️ B- (নেগেটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🅾️ O+ (পজিটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🅾️ O- (নেগেটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🆎 AB+ (পজিটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+    <button class="dropdown-btn">🆎 AB- (নেগেটিভ) ▼</button>
+    <div class="dropdown-container"><div class="member-card">তথ্য নেই</div></div>
+</div>
 
-    <div id="rightNav" class="side-nav right">
-        <span class="closebtn" onclick="closeNav('rightNav')">&times;</span>
-        <div style="padding: 15px; font-size: 13px; font-style: italic; color: #ffcccc; background: rgba(0,0,0,0.2); margin: 10px; border-radius: 5px;">
-            "আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি প্রাণ। মানবতার সেবায় রক্তদানে এগিয়ে আসুন।"
-        </div>
-        <a href="#">🅰️ A+ (এ পজিটিভ)</a><a href="#">🅰️ A- (এ নেগেটিভ)</a><a href="#">🅱️ B+ (বি পজিটিভ)</a><a href="#">🅱️ B- (বি নেগেটিভ)</a><a href="#">🅾️ O+ (ও পজিটিভ)</a><a href="#">🅾️ O- (ও নেগেটিভ)</a><a href="#">🆎 AB+ (এবি পজিটিভ)</a><a href="#">🆎 AB- (এবি নেগেটিভ)</a>
-    </div>
-<header style="text-align: center; padding: 40px 0; background: #f4f7f6; margin-bottom: 20px;">
-    
-<header style="text-align: center; padding: 15px 0; background: #fff; max-width: 100%; overflow: hidden; border-bottom: 2px solid #1a237e;">
-    <div style="position: relative; width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-        
-        <div style="width: 80px; height: 80px; border: 3px solid #1a237e; border-radius: 50%; background: white; z-index: 2; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="logo.png" alt="Logo" style="width: 85%; height: 85%; object-fit: contain;">
-        </div>
-
-        <svg viewBox="0 0 200 200" style="position: absolute; width: 100%; height: 100%; animation: rotateBangla 15s linear infinite; z-index: 1;">
-            <path id="circlePath" d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" fill="transparent" />
-            <text fill="#d32f2f" style="font-size: 16px; font-weight: bold; letter-spacing: 1px;">
-                <textPath href="#circlePath">
-                    আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ • আঁধারে স্বপ্নের আলো ফাউন্ডেশন বাংলাদেশ •
-                </textPath>
-            </text>
-        </svg>
-    </div>
+<script>
+    function openLeft() { document.getElementById("leftNav").style.width = "280px"; closeRight(); }
+    function closeLeft() { document.getElementById("leftNav").style.width = "0"; }
+    function openRight() { document.getElementById("rightNav").style.width = "280px"; closeLeft(); }
+    function closeRight() { document.getElementById("rightNav").style.width = "0"; }
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    for (var i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            var container = this.nextElementSibling;
+            if (container.style.display === "block") { container.style.display = "none"; } 
+            else {
+                var all = this.parentElement.getElementsByClassName("dropdown-container");
+                for (var j = 0; j < all.length; j++) all[j].style.display = "none";
+                container.style.display = "block";
+            }
+        });
+    }
+</script>
 
     <div style="width: 85%; max-width: 350px; margin: 10px auto 0; border-top: 2px solid #1a237e; border-bottom: 2px solid #1a237e; padding: 5px 0; overflow: hidden;">
         <marquee behavior="scroll" direction="left" scrollamount="4" style="color: #1a237e; font-size: 15px; font-weight: bold; font-family: sans-serif; display: block;">
