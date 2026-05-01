@@ -105,106 +105,82 @@ body {
 
 /* লেখাগুলো ঝকঝকে সাদা করার জন্য *
     
-<style>
-    /* মেনু ও ড্রপডাউন ডিজাইন */
-    .sidenav { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #1a237e; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
-    .sidenav a, .dropdown-btn { padding: 15px 20px; text-decoration: none; font-size: 16px; color: #fff; display: block; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; text-align: left; background: none; border: none; cursor: pointer; }
-    .dropdown-container { display: none; background-color: #0d124a; padding-left: 8px; }
-    .member-card { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .m-name { color: #ffd700 !important; font-weight: bold; font-size: 14px; display: block; }
-    .m-pos { color: #eee !important; font-size: 12px; display: block; }
 </style>
 
-<header style="background: #1a237e; padding: 10px; position: sticky; top: 0; z-index: 1000;">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div onclick="openNav()" style="cursor: pointer; color: white; font-size: 20px; font-weight: bold;">☰ কমিটি লিস্ট</div>
-        <div style="color: white; font-size: 10px;">ADHARER SOPNER ALO</div>
+<header style="background: #1a237e; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div onclick="openNav()" style="cursor: pointer; color: white; font-size: 18px; font-weight: bold;">☰ কমিটি লিস্ট</div>
+        <div style="color: white; font-size: 12px; font-weight: bold;">ব্লাড ডোনার 🩸</div>
+    </div>
+    <div style="text-align: center; color: white; font-size: 10px; letter-spacing: 1px; margin-bottom: 10px;">ADHARER SOPNER ALO FOUNDATION</div>
+    <div style="display: flex; justify-content: center; gap: 8px;">
+        <a href="#about" style="background: white; color: #1a237e; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">সম্পর্কে</a>
+        <a href="#gallery" style="background: #3949ab; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">গ্যালারি</a>
+        <a href="#contact" style="background: #e53935; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">যোগাযোগ</a>
     </div>
 </header>
 
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: 30px; text-align: right;">&times;</a>
+<div id="mySidenav" class="sidenav" style="height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0; background-color: #1a237e; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
+    <a href="javascript:void(0)" onclick="closeNav()" style="font-size: 30px; color: white; position: absolute; top: 10px; right: 25px; text-decoration: none;">&times;</a>
     
-    <button class="dropdown-btn">✈️ প্রবাসী শাখা ▼</button>
-    <div class="dropdown-container">
+    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">✈️ প্রবাসী শাখা ▼</button>
+    <div class="dropdown-container" style="display: none; background: #0d124a;">
+        <script>
+            const members = [
+                {n: "মনির হোসেন", p: "প্রধান উপদেষ্টা"}, {n: "আরিফ হোসেন", p: "সিনিয়র উপদেষ্টা"},
+                {n: "সাইফুল ইসলাম", p: "উপদেষ্টা"}, {n: "শরিফুল ইসলাম", p: "উপদেষ্টা"},
+                {n: "জসিম বেপারী", p: "উপদেষ্টা"}, {n: "জামাল হোসেন", p: "উপদেষ্টা"},
+                {n: "মোঃ ইমরান হোসেন", p: "সভাপতি"}, {n: "শফিকুল ইসলাম", p: "সিনিয়র সহ-সভাপতি"},
+                {n: "মোঃ ফয়সাল বেপারী", p: "সহ-সভাপতি"}, {n: "জুয়েল হোসেন", p: "সহ-সভাপতি"},
+                {n: "সোহাগ হোসেন", p: "সাধারণ সম্পাদক"}, {n: "বাদশা ফাহাদ", p: "যুগ্ম সাধারণ সম্পাদক"},
+                {n: "মোঃ রেদওয়ান আহমেদ", p: "সহ-সাধারণ সম্পাদক"}, {n: "হাফেজ মোহাম্মদ রাসেল", p: "সাংগঠনিক সম্পাদক"},
+                {n: "আব্দুল কাইয়ুম", p: "সহ-সাংগঠনিক সম্পাদক"}, {n: "রবিউল হোসেন", p: "সহ-সাংগঠনিক সম্পাদক"},
+                {n: "রুবেল আহমেদ", p: "সহ-সাংগঠনিক সম্পাদক"}, {n: "মোহাম্মদ মাহির ফয়সাল", p: "শিক্ষা বিষয়ক সম্পাদক"},
+                {n: "শামীম হোসেন", p: "সহ-শিক্ষা বিষয়ক সম্পাদক"}, {n: "হাফেজ মোহাম্মদ নাহিদ", p: "ধর্মীয় বিষয়ক সম্পাদক"},
+                {n: "হৃদয় বেপারী", p: "সাংস্কৃতিক সম্পাদক"}, {n: "জামাল হোসেন", p: "প্রশিক্ষণ ও উন্নয়ন সম্পাদক"},
+                {n: "মোহাম্মদ আল আমিন", p: "দপ্তর সম্পাদক"}, {n: "মীর সাব্বির অন্তর", p: "সহ-দপ্তর সম্পাদক"},
+                {n: "কামাল হোসেন সাগর", p: "অর্থ সম্পাদক"}, {n: "মোহাম্মদ ইব্রাহিম", p: "সহ-অর্থ সম্পাদক"},
+                {n: "মোঃ রাসেল হোসেন", p: "পরিকল্পনা ও উন্নয়ন সম্পাদক"}, {n: "মোঃ সৈকত", p: "সমাজসেবা সম্পাদক"},
+                {n: "রাকিব আল হাসান", p: "মানবিক সহায়তা সম্পাদক"}, {n: "আকাশ খান জুয়েল", p: "প্রবাসী কল্যাণ সম্পাদক"},
+                {n: "মোহাম্মদ আল আমিন খান", p: "পরিবেশ বিষয়ক সম্পাদক"}, {n: "মোহাম্মদ আহাদ", p: "প্রচার সম্পাদক"},
+                {n: "মোঃ সাকিব", p: "সহ-প্রচার সম্পাদক"}, {n: "নীরব মজুমদার", p: "আন্তর্জাতিক বিষয়ক সম্পাদক"},
+                {n: "নাজমুল কবির", p: "ক্রীড়া সম্পাদক"}, {n: "সোহেল হোসেন", p: "মিডিয়া ও প্রকাশনা সম্পাদক"},
+                {n: "আল আমিন হোসেন", p: "তথ্য ও প্রযুক্তি সম্পাদক"}, {n: "মোহাম্মদ রাজিব", p: "যোগাযোগ সম্পাদক"},
+                {n: "মোঃ রাব্বি বেপারী", p: "সহ-যোগাযোগ সম্পাদক"}
+            ];
+
+            members.forEach((m, i) => {
+                document.write(`
+                    <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 14px;">${i+1}. ${m.n}</span><br>
+                        <span style="color: #eee; font-size: 12px;">${m.p}</span><br>
+                        <div style="margin-top: 5px;">
+                            <a href="tel:000" style="color: #00ffcc; font-size: 11px; text-decoration: none; margin-right: 10px;">📞 কল</a>
+                            <a href="mailto:info@foundation.com" style="color: #00ffcc; font-size: 11px; text-decoration: none;">✉️ ইমেইল</a>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+
+    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">🇧🇩 বাংলাদেশ শাখা ▼</button>
+    <div class="dropdown-container" style="display: none; background: #0d124a;">
+        <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
+            <span style="color: #fff; font-weight: bold;">১. মোঃ মীর রাসেল (বাবু) পাটোয়ারী</span><br>
+            <span style="color: #00ffcc; font-size: 12px;">প্রতিষ্ঠাতা সভাপতি</span>
         </div>
+        <div style="padding: 10px; border-bottom: 1px solid #ffffff14;">
+            <span style="color: #fff; font-weight: bold;">২. মোহাম্মদ রাশেদুল হাসান</span><br>
+            <span style="color: #00ffcc; font-size: 12px;">প্রতিষ্ঠাতা সেক্রেটারি</span>
+        </div>
+    </div>
 
-    <button class="dropdown-btn">🇧🇩 বাংলাদেশ শাখা ▼</button>
-    <div class="dropdown-container">
-         </div>
-
-    <button class="dropdown-btn">👥 সাধারণ সদস্য ▼</button>
-    <div class="dropdown-container">
-         </div>
+    <button class="dropdown-btn" style="width: 100%; padding: 15px; background: none; border: none; color: white; text-align: left; font-size: 16px; border-bottom: 1px solid #ffffff21; cursor: pointer;">👥 সাধারণ সদস্য ▼</button>
+    <div class="dropdown-container" style="display: none; background: #0d124a;">
+        <div style="padding: 20px; color: #ccc; text-align: center;">তালিকা শীঘ্রই আসছে...</div>
+    </div>
 </div>
-
-<script>
-function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
-function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
-
-var dropdown = document.getElementsByClassName("dropdown-btn");
-for (var i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    var dropdownContent = this.nextElementSibling;
-    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
-  });
-}
-</script>
-
-
-        <div class="member-card"><span class="m-name">১. মনির হোসেন</span><span class="m-pos">প্রধান উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২. আরিফ হোসেন</span><span class="m-pos">সিনিয়র উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩. সাইফুল ইসলাম</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৪. শরিফুল ইসলাম</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৫. জসিম বেপারী</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৬. জামাল হোসেন</span><span class="m-pos">উপদেষ্টা</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">🤝 নির্বাহী পরিষদ <i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">১. মোঃ ইমরান হোসেন</span><span class="m-pos">সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২. শফিকুল ইসলাম</span><span class="m-pos">সিনিয়র সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৩. মোঃ ফয়সাল বেপারী</span><span class="m-pos">সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৪. জুয়েল হোসেন</span><span class="m-pos">সহ-সভাপতি</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৫. সোহাগ হোসেন</span><span class="m-pos">সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৬. বাদশা ফাহাদ</span><span class="m-pos">যুগ্ম সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৭. মোঃ রেদওয়ান আহমেদ</span><span class="m-pos">সহ-সাধারণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৮. হাফেজ মোহাম্মদ রাসেল</span><span class="m-pos">সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">৯. আব্দুল কাইয়ুম</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১০. রবিউল হোসেন</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১১. রুবেল আহমেদ</span><span class="m-pos">সহ-সাংগঠনিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">📚 শিক্ষা ও সংস্কৃতি বিভাগ <i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">১২. মোহাম্মদ মাহির ফয়সাল</span><span class="m-pos">শিক্ষা বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১৩. শামীম হোসেন</span><span class="m-pos">সহ-শিক্ষা বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১৪. হাফেজ মোহাম্মদ নাহিদ</span><span class="m-pos">ধর্মীয় বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১৫. হৃদয় ব্যাপারী</span><span class="m-pos">সাংস্কৃতিক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১৬. জামাল হোসেন</span><span class="m-pos">প্রশিক্ষণ ও উন্নয়ন সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">🏢 প্রশাসন ও দপ্তর বিভাগ <i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">১৭. মোহাম্মদ আল আমিন</span><span class="m-pos">দপ্তর সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">১৮. মীর সাব্বির অন্তর</span><span class="m-pos">সহ-দপ্তর সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">💰 অর্থ ও পরিকল্পনা বিভাগ <i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">১৯. কামাল হোসেন সাগর</span><span class="m-pos">অর্থ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২০. মোহাম্মদ ইব্রাহিম</span><span class="m-pos">সহ-অর্থ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২১. মোঃ রাসেল হোসেন</span><span class="m-pos">পরিকল্পনা ও উন্নয়ন সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
-    <button class="dropdown-btn">🌱 সামাজিক বিভাগ <i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-        <div class="member-card"><span class="m-name">২২. মোঃ সৈকত</span><span class="m-pos">সমাজসেবা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৩. রাকিব আল হাসান</span><span class="m-pos">মানবিক সহায়তা সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৪. আকাশ খান জুয়েল</span><span class="m-pos">প্রবাসী কল্যাণ সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-        <div class="member-card"><span class="m-name">২৫. মোহাম্মদ আল আমিন খান</span><span class="m-pos">পরিবেশ বিষয়ক সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
-    </div>
-
     <button class="dropdown-btn">📢 প্রচার ও প্রযুক্তি বিভাগ <i class="fa fa-caret-down"></i></button>
     <div class="dropdown-container">
         <div class="member-card"><span class="m-name">২৬. মোহাম্মদ আহাদ</span><span class="m-pos">প্রচার সম্পাদক</span><div class="m-contact"><a href="tel:">📞 কল</a><a href="mailto:">✉️ ইমেইল</a></div></div>
