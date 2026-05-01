@@ -111,22 +111,34 @@ h1, h2, h3, p, li, a, span {
 </style> </style>
 <header style="background: #1a237e; padding: 12px 10px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #ffcc00; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
     
-    <div style="cursor: pointer; color: white; padding: 5px;" onclick="openNav('leftNav')">
-        <span style="font-size: 24px;">☰</span>
+    <header style="background: #1a237e; padding: 8px 10px; position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between;">
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="color: white; font-size: 9px; font-weight: bold; opacity: 0.8; text-transform: uppercase;">কমিটি লিস্ট</span>
+        <div style="cursor: pointer; color: white; line-height: 1;" onclick="openNav('leftNav')">
+            <span style="font-size: 22px;">☰</span>
+        </div>
     </div>
 
-    <div style="color: white; font-size: 11px; font-weight: bold; line-height: 1.2; text-align: center; flex-grow: 1;">
-        ADHARER SOPNER ALO<br>FOUNDATION
-    </div>
-    
-    <div style="display: flex; gap: 5px; align-items: center;">
-        <a href="#about" style="background: #ffffff; color: #1a237e; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: bold;">সম্পর্কে</a>
-        <a href="#gallery" style="background: #3949ab; color: white; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 11px;">গ্যালারি</a>
-        <a href="#contact" style="background: #e53935; color: white; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 11px;">যোগাযোগ</a>
-        
-        <div style="cursor: pointer; color: white; padding: 5px; margin-left: 5px;" onclick="openNav('rightNav')">
-            <span style="font-size: 24px;">☰</span>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; gap: 5px;">
+        <div style="color: white; font-size: 10px; font-weight: bold; text-align: center; line-height: 1.2;">
+            ADHARER SOPNER ALO<br>FOUNDATION
         </div>
+        <div style="display: flex; gap: 4px;">
+            <a href="#about" style="background: #ffffff; color: #1a237e; padding: 4px 6px; border-radius: 4px; text-decoration: none; font-size: 10px; font-weight: bold;">সম্পর্কে</a>
+            <a href="#gallery" style="background: #3949ab; color: white; padding: 4px 6px; border-radius: 4px; text-decoration: none; font-size: 10px;">গ্যালারি</a>
+            <a href="#contact" style="background: #e53935; color: white; padding: 4px 6px; border-radius: 4px; text-decoration: none; font-size: 10px;">যোগাযোগ</a>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="color: white; font-size: 9px; font-weight: bold; opacity: 0.8; text-transform: uppercase;">ব্লাড ডোনার</span>
+        <div style="cursor: pointer; color: white; line-height: 1;" onclick="openNav('rightNav')">
+            <span style="font-size: 22px;">☰</span>
+        </div>
+    </div>
+
+    </header>
     </div>
 </header>
 </header>
